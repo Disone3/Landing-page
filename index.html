@@ -3,144 +3,141 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Acquisition Alerts | Opt In</title>
+  <title>3Nil Sports LLC | SMS Opt-In</title>
   <style>
-    :root { --max: 760px; }
-    html, body { margin:0; padding:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color:#111; background:#f7f7f9; }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 32px 20px 60px; }
-    header { text-align:center; margin-bottom: 28px; }
-    h1 { font-size: 28px; margin: 8px 0 6px; }
-    p.lead { font-size: 16px; margin: 0; color:#444; }
-    .card { background:#fff; border:1px solid #e6e6ea; border-radius: 10px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,.04); }
-    form { display:grid; gap:14px; }
-    label { font-size: 14px; margin-bottom: 6px; display:block; }
-    input, select, button, textarea {
-      width:100%; box-sizing:border-box; font-size:16px; padding:12px 12px;
-      border:1px solid #cfcfd3; border-radius:8px; background:#fff;
+    :root{
+      --bg:#eef2f5; --panel:#ffffff; --accent:#24a866; --accent-ink:#0b3b26;
+      --ink:#0f1720; --muted:#4b5563; --border:#e5e7eb; --shadow:0 8px 28px rgba(0,0,0,.08);
+      --radius:16px; --max:1100px;
     }
-    input:focus, select:focus, textarea:focus { outline:2px solid #3066ff22; border-color:#6980ff; }
-    button { background:#3066ff; color:#fff; border:none; cursor:pointer; font-weight:600; padding:13px 16px; }
-    button:hover { filter: brightness(0.98); }
-    .row { display:grid; grid-template-columns: 1fr; gap:14px; }
-    @media (min-width: 560px) { .row.two { grid-template-columns: 1fr 1fr; } }
-    .note { font-size: 12px; color:#333; line-height:1.45; background:#f9fafc; border:1px solid #e9ebf3; border-radius:8px; padding:12px; }
-    .disclosures { font-size:12px; color:#333; line-height:1.55; }
-    .disclosures b { color:#111; }
-    .tiny { font-size: 11px; color:#666; }
-    .center { text-align:center; }
-    footer { margin-top:26px; text-align:center; font-size:12px; color:#666; }
-    a { color:#3066ff; text-decoration:none; }
-    a:hover { text-decoration:underline; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+    .wrap{max-width:var(--max);margin:40px auto;padding:16px}
+    .card{display:grid;grid-template-columns:1fr;gap:0;background:var(--panel);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    @media(min-width:900px){ .card{grid-template-columns:1.1fr 1fr} }
+    .left{background:var(--accent);color:#fff;padding:36px 28px;display:flex;align-items:center;justify-content:center}
+    .left-inner{max-width:520px}
+    .brand{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+    .logo{width:56px;height:56px;border-radius:12px;background:#fff;display:grid;place-items:center;color:var(--accent-ink);font-weight:800}
+    h1{font-size:32px;line-height:1.15;margin:10px 0 8px}
+    .sub{color:#eaf7ef;font-size:16px}
+    .bullet{margin:16px 0 0 18px}
+    .bullet li{margin:6px 0}
+    .right{padding:32px}
+    .panel-title{font-size:28px;margin:4px 0 18px}
+    form{display:grid;gap:14px}
+    label{font-size:14px}
+    input,select,textarea,button{
+      width:100%;font-size:16px;padding:12px 12px;border:1px solid #cfd6dd;border-radius:10px;background:#fff
+    }
+    input:focus,select:focus,textarea:focus{outline:2px solid #2b7fff22;border-color:#2b7fff}
+    .row{display:grid;grid-template-columns:1fr;gap:14px}
+    @media(min-width:560px){ .row.two{grid-template-columns:1fr 1fr} }
+    button{background:var(--accent);color:#fff;border:none;font-weight:700;padding:14px 16px;cursor:pointer}
+    button:hover{filter:brightness(.98)}
+    .note{font-size:12px;line-height:1.5;background:#f8fafb;border:1px solid var(--border);border-radius:10px;padding:12px}
+    .tiny{font-size:11px;color:var(--muted);text-align:center}
+    footer{max-width:var(--max);margin:18px auto 40px;text-align:center;color:var(--muted);font-size:12px}
+    a{color:#0b74ff;text-decoration:none}
+    a:hover{text-decoration:underline}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <img src="https://dummyimage.com/72x72/111/fff&text=B" alt="Brand" width="72" height="72" style="border-radius:12px" />
-      <h1>Get Acquisition Alerts and Insights</h1>
-      <p class="lead">Join our private SMS list for new listings, buyer demand, and short tips on buying and selling a company</p>
-    </header>
-
-    <main class="card" role="main" aria-labelledby="optin-title">
-      <h2 id="optin-title" class="center" style="margin-top:0">Opt In by Phone Number</h2>
-
-      <!-- Replace the action with your form endpoint (Formspree, Web3Forms, a server you control, etc.) -->
-      <form id="optin" method="POST" action="https://formspree.io/f/your-endpoint">
-        <div class="row two">
-          <div>
-            <label for="name">Full name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
+    <div class="card" role="region" aria-label="SMS signup">
+      <!-- Left panel -->
+      <section class="left">
+        <div class="left-inner">
+          <div class="brand">
+            <div class="logo">3N</div>
+            <div>
+              <strong>3Nil Sports LLC</strong><br/>
+              Soccer retail and team orders
+            </div>
           </div>
+          <h1>Unlock Your Growth Potential</h1>
+          <p class="sub">Join our SMS list for product drops, team-order updates, and quick tips for running your club shop better</p>
+          <ul class="bullet">
+            <li>Exclusive promos and early access</li>
+            <li>Real-time updates on uniforms and gear</li>
+            <li>Fast answers and support when you need it</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Right panel -->
+      <section class="right">
+        <h2 class="panel-title">Get High-Quality Updates Instantly</h2>
+
+        <!-- Replace the action URL with your form endpoint -->
+        <form id="optin" method="POST" action="https://formspree.io/f/your-endpoint">
+          <div class="row two">
+            <div>
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="email">Email (optional)</label>
+              <input id="email" name="email" type="email" autocomplete="email" />
+            </div>
+          </div>
+
           <div>
             <label for="phone">Mobile number</label>
             <input id="phone" name="phone" type="tel" inputmode="tel"
-                   placeholder="(555) 555-5555"
-                   pattern="^[+]?[\d\s().-]{7,}$"
+                   placeholder="(555) 123-4567"
+                   pattern="^[+]?[\\d\\s().-]{7,}$"
                    autocomplete="tel" required />
           </div>
-        </div>
 
-        <div class="row two">
-          <div>
-            <label for="role">I am most interested in</label>
-            <select id="role" name="interest">
-              <option value="buying">Buying a business</option>
-              <option value="selling">Selling a business</option>
-              <option value="both">Both</option>
-            </select>
+          <div class="note">
+            <label style="display:flex;gap:10px;align-items:flex-start;">
+              <input type="checkbox" id="consent" name="consent" required />
+              <span>
+                I agree to receive <b>recurring marketing text messages</b> from <b>3Nil Sports LLC</b> at the mobile number I provided. Messages may use an automated system.
+                <b>Consent is not a condition of purchase</b>. <b>Message and data rates may apply</b>. <b>Message frequency varies</b>.
+                Reply <b>STOP</b> to opt out. Reply <b>HELP</b> for help.
+                We do not share mobile data with third parties or affiliates for marketing or promotional use.
+                See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and
+                <a href="/terms.html" target="_blank" rel="noopener">Terms</a>.
+              </span>
+            </label>
           </div>
-          <div>
-            <label for="email">Email (optional)</label>
-            <input id="email" name="email" type="email" autocomplete="email" />
-          </div>
-        </div>
 
-        <div>
-          <label for="notes">What are you looking for (optional)</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Industry, size, location"></textarea>
-        </div>
+          <!-- capture basics for audit -->
+          <input type="hidden" name="consent_timestamp" id="consent_timestamp" />
+          <input type="hidden" name="ua" id="ua" />
+          <input type="hidden" name="page" value="3nil-sms-optin" />
 
-        <!-- Consent checkbox with required TCPA style disclosures -->
-        <div class="note">
-          <label style="display:flex; gap:10px; align-items:flex-start;">
-            <input type="checkbox" id="consent" name="consent" required />
-            <span>
-              I agree to receive <b>recurring marketing text messages</b> from
-              <b>Your Company</b> at the mobile number I provided. Messages may use
-              an automatic system. <b>Consent is not a condition of purchase</b>.
-              <b>Message and data rates may apply</b>. <b>Message frequency varies</b>.
-              Reply <b>STOP</b> to opt out. Reply <b>HELP</b> for help.
-              We do not share mobile data with third parties or affiliates for marketing or promotional use.
-              See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a> and
-              <a href="/terms.html" target="_blank" rel="noopener">Terms</a>.
-            </span>
-          </label>
-        </div>
+          <button type="submit">Get Updates Now</button>
+          <p class="tiny">Carriers are not liable for delayed or undelivered messages</p>
 
-        <!-- hidden metadata captured client side -->
-        <input type="hidden" name="consent_timestamp" id="consent_timestamp" />
-        <input type="hidden" name="ua" id="ua" />
-
-        <button type="submit" aria-label="Join SMS list">Join the SMS list</button>
-
-        <p class="tiny center" style="margin-top:8px">
-          Carriers are not liable for delayed or undelivered messages
-        </p>
-
-        <section class="disclosures" aria-labelledby="disc">
-          <h3 id="disc" style="font-size:14px; margin:20px 0 8px">Program details</h3>
-          <ul style="margin:0 0 0 18px; padding:0;">
-            <li>Purpose: alerts on new listings and buyers plus short education on deals</li>
-            <li>Message frequency: varies by activity which often ranges from 1 to 8 messages per month</li>
-            <li>Opt out: reply STOP at any time to end messages</li>
-            <li>Help: reply HELP for help or email support at <a href="mailto:support@yourcompany.com">support@yourcompany.com</a></li>
-            <li>Rates: message and data rates may apply from your carrier</li>
-            <li>Privacy: no mobile data shared with third parties or affiliates for marketing or promotional purposes</li>
-          </ul>
-        </section>
-      </form>
-    </main>
-
-    <footer>
-      © <span id="year"></span> Your Company. All rights reserved.
-    </footer>
+          <p class="tiny" style="margin-top:8px">
+            Program details — Purpose: product drops, promotions, and team-order updates. Frequency varies by activity often 1–8 msgs per month. Opt-out anytime by replying STOP. For help reply HELP or email <a href="mailto:support@3nilsports.com">support@3nilsports.com</a>.
+          </p>
+        </form>
+      </section>
+    </div>
   </div>
 
+  <footer>
+    © <span id="year"></span> 3Nil Sports LLC. All rights reserved.
+  </footer>
+
   <script>
-    // light client side capture of consent time and user agent
+    // Basic audit fields
     document.getElementById('consent_timestamp').value = new Date().toISOString();
     document.getElementById('ua').value = navigator.userAgent || '';
 
-    // simple form guard so the checkbox must be checked
+    // Require checkbox
     document.getElementById('optin').addEventListener('submit', function(e){
-      const ok = document.getElementById('consent').checked;
-      if (!ok) {
+      if(!document.getElementById('consent').checked){
         e.preventDefault();
         alert('Please agree to the SMS terms to continue.');
       }
     });
 
-    // footer year
+    // Year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
